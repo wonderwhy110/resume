@@ -1,19 +1,16 @@
 const express = require('express');
-require('dotenv').config(); // Подключаем .env сразу в начале
-// const express = require('express');
+require('dotenv').config();
 const cors = require('cors');
 const axios = require('axios');
 
-
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// подтягиваем из .env
 const botToken = process.env.BOT_TOKEN;
 const chatId = process.env.CHAT_ID;
 
 const corsOptions = {
-  origin: 'http://127.0.0.1:5500',
+  origin: '*', // или замени на свой домен
   methods: ['POST'],
   allowedHeaders: ['Content-Type']
 };
@@ -50,9 +47,10 @@ ${message}
     res.status(500).json({ success: false });
   }
 });
+
 console.log('BOT_TOKEN из .env:', botToken);
 console.log('CHAT_ID из .env:', chatId);
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на http://127.0.0.1:${PORT}`);
+  console.log(`Сервер запущен на порту ${PORT}`);
 });
