@@ -1,4 +1,4 @@
-
+const express = require('express');
 require('dotenv').config(); // Подключаем .env сразу в начале
 // const express = require('express');
 const cors = require('cors');
