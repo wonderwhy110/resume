@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon"/>
+    
+    <!-- Подключаем шрифты ПЕРВЫМИ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+   
+
+    <!-- Остальные стили -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <body>
+      
+        <!-------------- HEADER -------------->
+
+        <header class="header">
+            <a href="#home" class="logo">Portfolio</a>
+
+            <i class="bx bx-menu" id="menu-icon"></i>
+
+            <nav class="navbar">
+                <a href="#about" class="active">Обо мне</a>
+                <a href="#services" class="active">Навыки</a>
+                <a href="#portfolio" class="active">Проекты</a>
+                <a href="#contact" class="active">Контакты</a>
+                <a href="index.html" class="active lang"><span class="fi fi-us"></span></a>
+            </nav>
+        </header>
+
+        <!-------------- HOME -------------->
+
+        <section class="home" id="home">
+            <div class="home-content">
+                <h1>Дарья Курлетова</h1>
+                <h3>Желаемая должность: 
+                    Front-end разработчик </h3>
+                
+                <div class="social-media">
+                    <a href="https://github.com/wonderwhy110" target="_blank"><i class='bx bxl-github'></i></a>
+                    <div class="email-container">
+        <a> <i class='bx bx-envelope' id="emailIcon"></i>
+        <div class="email-popup" id="emailPopup">
+            kurletovada@mail.ru
+
+        </div>
+    </div></a>
+                   
+                    <a href="https://t.me/babyniga" target="_blank"><i class='bx bxl-telegram'></i></a>
+                   
+                </div>
+                <a href="#" class="btn">Скачать резюме</a>
+            </div>
+
+            <div class="home-img">
+                <img src="images/avatar.png" alt="Фото в форме круга">
+            </div>
+        </section>
+
+        <!-------------- ABOUT -------------->
+
+        <section class="about" id="about">
+            <div class="about-img">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div class="about-content">
+                <h2 class="heading">Обо <span>мне</span></h2>
+                <h3>Front-end & Back-end Developer</h3>
+                <p>Образование: программная инженерия (неоконченное высшее) 2023 - 2027</p>
+
+                <p>Учебное заведение: <a href="https://miet.ru/">МИЭТ</a>, Кафедра СПИНТЕХ</p>
+
+                <p>Профиль: Инженерия программного обеспечения и компьютерных систем (в данный момент на 2 
+курсе)</p>
+                <p>Готова к сотрудничеству и обучению необходимым знаниям</p>
+            </div>
+        </section>
+
+        <!-------------- SERVICES -------------->
+
+        <section class="services" id="services">
+            <h2 class="heading">Мои <span>навыки</span></h2>
+
+            <div class="services-container">
+                <div class="services-box">
+                    <i class='bx bxl-java'></i>
+                    <h3>Backend Разработка</h3>
+                    <ul>
+                        <li>Python(Django, Matplotlib)</li>
+                        <li>SQL</li>
+                        <li>Git</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+
+                <div class="services-box">
+                    <i class="bx bx-code-alt"></i>
+                    <h3>Frontend Разработка</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                          <li>JavaScript</li>
+                        <li>Bootstrap, Boxicons, Font Awesome</li>
+                      
+                    </ul>
+                       <h3>Графические редакторы</h3>
+                       <ul>
+                        <li>Figma</li>
+                        <li>Photoshop</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-------------- PORTFOLIO -------------->
+
+        <section class="portfolio" id="portfolio">
+            <h2 class="heading">Последние <span>проекты</span></h2>
+
+            <div class="carousel-container">
+  <div class="carousel">
+    <img src="images/img1.png" alt="Фото 1">
+     <img src="images/img2.png" alt="Фото 2">
+      <img src="images/img3.png" alt="Фото 3">
+       <img src="images/img5.png" alt="Фото 4">
+  </div>
+  <button class="carousel-btn prev"><i class="fa-solid fa-chevron-left"></i></i></button>
+  <button class="carousel-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+        </section>
+
+        <!-------------- CONTACT -------------->
+        
+        <section class="contact" id="contact">
+            <h2 class="heading">Связаться <span>со мной</span></h2>
+
+            <form id="contactForm" action="javascript:void(0);" method="POST"> 
+                <div class="input-box">
+                    <input required type="text" name="fullname" placeholder="Полное имя">
+                    <input required id="email" type="text" name="email" placeholder="Электронная почта">
+                </div>
+
+                <div class="input-box">
+                    <input required type="text" id="phone" name="phone" placeholder="Телефон для связи">
+                    <input required type="text" name="subject"  placeholder="Тема письма">
+                </div>
+                <textarea required name="message"  cols="30" rows="10" placeholder="Ваше сообщение"></textarea>
+                <input type="submit" id="contact-button" class="btn" value="Отправить">
+                <div id="form-message" style="margin-top: 10px;"></div>
+
+
+            </form>
+
+        </section>
+
+        <!-------------- FOOTER -------------->
+
+        <footer class="footer">
+            <div class="footer-text">
+                <p>Резюме 2025</p>
+            </div>
+
+            <div class="footer-icon-top">
+                <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+        </footer>
+
+        <!-------------- SCROLL REVEAL -------------->  
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-------------- TYPED JS -------------->  
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <!-------------- CUSTOM JS -------------->  
+            <script src="script.js"></script>
+
+
+    </body>
+  
+</html>
