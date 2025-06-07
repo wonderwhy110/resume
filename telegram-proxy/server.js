@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
 const axios = require('axios');
-const path = require('path');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,15 +15,19 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Путь к корневой папке проекта
+const path = require('path');
+
+// Путь до папки с index.html, которая на уровень выше
 const rootDir = path.join(__dirname, '..');
 
-// ✅ Статика из корня проекта (где index.html)
+// Отдаем статические файлы из корневой папки
 app.use(express.static(rootDir));
 
-// ✅ Отдаём index.html при GET /
+// Маршрут для главной страницы
 app.get('/', (req, res) => {
   res.sendFile(path.join(rootDir, 'index.html'));
 });
+
 
 // ✅ Обработка отправки сообщения
 app.post('/send-message', async (req, res) => {
