@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,17 +10,22 @@ const PORT = process.env.PORT || 3000;
 const botToken = process.env.BOT_TOKEN;
 const chatId = process.env.CHAT_ID;
 
-const corsOptions = {
-  origin: '*', // или замени на свой домен
-  methods: ['POST'],
-  allowedHeaders: ['Content-Type']
-};
-
-app.use(cors(corsOptions));
+// Разрешить CORS
+app.use(cors());
 app.use(express.json());
 
-app.options('/send-message', cors(corsOptions)); // preflight
+// ✅ Путь к корневой папке проекта
+const rootDir = path.join(__dirname, '..');
 
+// ✅ Статика из корня проекта (где index.html)
+app.use(express.static(rootDir));
+
+// ✅ Отдаём index.html при GET /
+app.get('/', (req, res) => {
+  res.sendFile(path.join(rootDir, 'index.html'));
+});
+
+// ✅ Обработка отправки сообщения
 app.post('/send-message', async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
 
@@ -47,9 +53,6 @@ ${message}
     res.status(500).json({ success: false });
   }
 });
-
-console.log('BOT_TOKEN из .env:', botToken);
-console.log('CHAT_ID из .env:', chatId);
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
